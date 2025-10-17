@@ -1,0 +1,129 @@
+:root {
+  --bg: #faf8ef;
+  --board-bg: #bbada0;
+  --cell-bg: #cdc1b4;
+  --tile-2: #eee4da;
+  --tile-4: #ede0c8;
+  --tile-8: #f2b179;
+  --tile-16: #f59563;
+  --tile-32: #f67c5f;
+  --tile-64: #f65e3b;
+  --tile-128: #edcf72;
+  --tile-256: #edcc61;
+  --tile-512: #edc850;
+  --tile-1024: #edc53f;
+  --tile-2048: #edc22e;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  min-height: 100vh;
+  background: var(--bg);
+  color: #776e65;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: min(90vw, 560px);
+  justify-content: space-between;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.score {
+  background: #bbada0;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.board-wrap { position: relative; }
+
+.board {
+  display: grid;
+  gap: 10px;
+  width: min(90vw, 480px);
+  aspect-ratio: 1 / 1;
+  background: var(--board-bg);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.tile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: clamp(14px, 5vw, 28px);
+  border-radius: 6px;
+  color: #776e65;
+  background: var(--cell-bg);
+  user-select: none;
+}
+
+.tile-empty { opacity: 0.35; }
+.tile-2 { background: var(--tile-2); }
+.tile-4 { background: var(--tile-4); }
+.tile-8 { background: var(--tile-8); color: #f9f6f2; }
+.tile-16 { background: var(--tile-16); color: #f9f6f2; }
+.tile-32 { background: var(--tile-32); color: #f9f6f2; }
+.tile-64 { background: var(--tile-64); color: #f9f6f2; }
+.tile-128 { background: var(--tile-128); color: #f9f6f2; font-size: clamp(12px, 4.5vw, 24px); }
+.tile-256 { background: var(--tile-256); color: #f9f6f2; font-size: clamp(12px, 4.5vw, 24px); }
+.tile-512 { background: var(--tile-512); color: #f9f6f2; font-size: clamp(12px, 4.5vw, 24px); }
+.tile-1024 { background: var(--tile-1024); color: #f9f6f2; font-size: clamp(10px, 4vw, 20px); }
+.tile-2048 { background: var(--tile-2048); color: #f9f6f2; font-size: clamp(10px, 4vw, 20px); }
+
+.status {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.help {
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+.overlay-card {
+  background: rgba(255,255,255,0.9);
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 256px;
+}
+.overlay-title { font-weight: 800; font-size: 20px; }
+.overlay-actions { display: flex; gap: 8px; justify-content: center; }
+
